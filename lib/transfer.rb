@@ -38,7 +38,7 @@ class Transfer
     elsif @sender.balance < @amount || @receiver.close_account == "closed"
       @status = "rejected"
       return "Transaction rejected. Please check your account balance."
-    else @sender.balance > @amount
+    else @sender.balance > @amount && @receiver.valid?
       @sender.deposit(-@amount)
       @receiver.deposit(@amount)
       @status = "complete"
