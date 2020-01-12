@@ -30,10 +30,10 @@ class Transfer
     end
   end
 
-  # can reverse a transfer between two accounts 
-  # it can only reverse executed transfers 
+  # can reverse a transfer between two accounts
+  # it can only reverse executed transfers
   def reverse_transfer
-    
+
   end
 
 end
