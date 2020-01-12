@@ -24,12 +24,30 @@ class Transfer
       "Transaction rejected. Please check your account balance."
     elsif @status == "complete"
       puts "Transaction has already been executed"
-    else @status = "pending"
+    else 
       @sender.deposit(-@amount)
       @receiver.deposit(@amount)
       @status = "complete"
     end
   end
+
+
+  # def execute_transaction
+  #   if @status == "complete"
+  #     puts "Transaction has already been executed" 
+  # 
+  #     @sender.balance < @amount && @sender.close_account == "closed"
+  #     @status = "rejected"
+  #     "Transaction rejected. Please check your account balance."
+  #   elsif 
+  #   else @status = "pending"
+  #     @sender.deposit(-@amount)
+  #     @receiver.deposit(@amount)
+  #     @status = "complete"
+  #   end
+  # end
+
+  
 
   # can reverse a transfer between two accounts
   # it can only reverse executed transfers
