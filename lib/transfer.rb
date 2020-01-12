@@ -35,8 +35,9 @@ class Transfer
   # it can only reverse executed transfers
   def reverse_transfer
     if @status == "complete"
-      @sender.balance(@amount)
-      @receiver.balance(-@amount)
+      @sender.deposit(@amount)
+      @receiver.deposit(-@amount)
+      @status = "reversed"
   end
 
 end
