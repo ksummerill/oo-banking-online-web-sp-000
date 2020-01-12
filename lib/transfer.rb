@@ -19,7 +19,7 @@ class Transfer
   # each transfer can only happen once
   # rejects a transfer if the sender does not have enough funds (does not have a valid account)
   def execute_transaction
-    if @sender.balance < @amount
+    if @sender.balance < @amount || @sender.valid? == false
       @status = "rejected"
       return "Transaction rejected. Please check your account balance."
     elsif @status == "complete"
