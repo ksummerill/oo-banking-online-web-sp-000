@@ -18,18 +18,18 @@ class Transfer
   # can execute a successful transaction between two accounts
   # each transfer can only happen once
   # rejects a transfer if the sender does not have enough funds (does not have a valid account)
-  def execute_transaction
-    if @sender.balance < @amount && @sender.close_account == "closed"
-      @status = "rejected"
-      "Transaction rejected. Please check your account balance."
-    elsif @status == "complete"
-      puts "Transaction has already been executed"
-    else 
-      @sender.deposit(-@amount)
-      @receiver.deposit(@amount)
-      @status = "complete"
-    end
-  end
+  # def execute_transaction
+  #   if @sender.balance < @amount && @sender.close_account == "closed"
+  #     @status = "rejected"
+  #     "Transaction rejected. Please check your account balance."
+  #   elsif @status == "complete"
+  #     puts "Transaction has already been executed"
+  #   else 
+  #     @sender.deposit(-@amount)
+  #     @receiver.deposit(@amount)
+  #     @status = "complete"
+  #   end
+  # end
 
 
   # def execute_transaction
