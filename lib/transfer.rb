@@ -24,9 +24,16 @@ class Transfer
       @receiver.balance += @amount
       @status = "complete"
     else
+      BankAccount.close_account
       @status = "rejected"
       return "Transaction rejected. Please check your account balance."
     end
+  end
+
+  # can reverse a transfer between two accounts 
+  # it can only reverse executed transfers 
+  def reverse_transfer
+    
   end
 
 end
